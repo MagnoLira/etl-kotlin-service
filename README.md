@@ -16,10 +16,7 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 
 # Structure
 ├── data/ # Input CSV files
-
 ├── gradle/ # Gradle wrapper files
-
-
 ├── src/
 │ └── main/
 │ ├── kotlin/
@@ -52,15 +49,20 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 # SAMPLE PAYLOAD:
 
 {
+
   "source": {
     "type": "csv",
     "path": "./data/input.csv"
-  },
-  "transformations": [
+  }
+,
+  "transformations": 
+[
     { "type": "drop_nulls" },
     { "type": "rename_column", "from": "nome_antigo", "to": "cliente_nome" }
   ],
-  "destination": {
+
+  "destination": 
+{
     "type": "postgresql",
     "table": "clientes"
   }
