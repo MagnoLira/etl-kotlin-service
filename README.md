@@ -12,38 +12,29 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 
 
 
+The project follows a structured and scalable architecture:
 
-
-etl-kotlin-service/
-├── data/                        # Input CSV files
-├── gradle/                      # Gradle wrapper files
-├── src/
-│   └── main/
-│       ├── kotlin/
-│       │   └── com/magno/etlservice/
-│       │       ├── controller/          # HTTP layer
-│       │       ├── model/               # Data classes (e.g., EtlJobRequest.kt)
-│       │       ├── scheduler/           # Scheduled jobs (optional)
-│       │       ├── service/             # Business logic for ETL
-│       │       └── EtlserviceApplication.kt # Entry point
-│       └── resources/
-│           ├── static/                  # Static resources (optional)
-│           ├── templates/               # HTML templates (optional)
-│           └── application.properties   # Environment configs
-├── test/                        # Test cases
-├── build.gradle.kts             # Build configuration
-├── settings.gradle.kts          # Gradle settings
-├── .gitignore
-├── README.md
-
-
-
-
-
-
-
-
-
+    etl-kotlin-service/
+    ├── data/                             # Input CSV files for ETL
+    ├── gradle/                           # Gradle wrapper files
+    ├── src/
+    │   └── main/
+    │       ├── kotlin/
+    │       │   └── com/magno/etlservice/
+    │       │       ├── controller/       # REST controllers to expose ETL endpoints
+    │       │       ├── model/            # Data classes (e.g., EtlJobRequest.kt)
+    │       │       ├── scheduler/        # Scheduled ETL jobs (optional)
+    │       │       ├── service/          # Core ETL business logic
+    │       │       └── EtlserviceApplication.kt  # Spring Boot application entry point
+    │       └── resources/
+    │           ├── static/               # Static resources (e.g., frontend assets, optional)
+    │           ├── templates/            # HTML templates (optional, for Thymeleaf, etc.)
+    │           └── application.properties  # Environment configuration (DB credentials, etc.)
+    ├── test/                             # Unit and integration test cases
+    ├── build.gradle.kts                 # Build configuration for the project
+    ├── settings.gradle.kts              # Gradle project settings
+    ├── .gitignore                        # Files and directories ignored by Git
+    ├── README.md                         # Project documentation
 
 ### Example Payload
 
@@ -62,4 +53,3 @@ etl-kotlin-service/
     "table": "clientes"
   }
 }
-
