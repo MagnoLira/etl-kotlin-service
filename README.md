@@ -35,6 +35,10 @@ The project follows a structured and scalable architecture:
     ├── settings.gradle.kts              # Gradle project settings
     ├── .gitignore                        # Files and directories ignored by Git
     ├── README.md                         # Project documentation
+### Important Links
+
+Spring initalizr: https://start.spring.io 
+
 
 ### Example Payload
 
