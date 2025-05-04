@@ -16,7 +16,10 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 
 # Structure
 ├── data/ # Input CSV files
+
 ├── gradle/ # Gradle wrapper files
+
+
 ├── src/
 │ └── main/
 │ ├── kotlin/
