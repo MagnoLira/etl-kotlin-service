@@ -2,7 +2,10 @@
 A backend service for performing basic ETL (Extract, Transform, Load) operations. It allows ingesting data from CSV files, applying simple transformations (such as dropping nulls or renaming columns), and loading the processed data into a PostgreSQL database. Built with Kotlin and designed to be easily extensible.
 
 
-## Features
+
+
+
+## Current - Features
 
 - Modular transformation logic
 - Clean project architecture (Controller, Service, Model)
@@ -41,6 +44,37 @@ Spring initalizr: https://start.spring.io
 
 
 Cloud Database: [console.neon.tech](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjsiqCHgYuNAxWtr5UCHWAABtAQFnoECAkQAQ&url=https%3A%2F%2Fneon.tech%2F&usg=AOvVaw2V-qc7rmEG-pLkc_6mJupK&cshid=1746402786191605&opi=89978449)
+### New features - Perspective 
+
+- Support for multiple data sources (e.g., MySQL, APIs, JSON, Excel)
+
+
+- DSL for transformation and validation rules
+
+
+- Job orchestration with Airflow or Quartz
+
+
+- Authentication and authorization (JWT-based)
+
+
+- Web interface for job submission and monitoring
+
+
+- Monitoring dashboard with Prometheus / Grafana
+
+
+- Data quality integration with Great Expectations
+
+
+- Retry and error-handling mechanisms
+
+
+- Job history and status tracking
+
+
+- Logging and alerting system
+
 
 ### Example Payload
 
