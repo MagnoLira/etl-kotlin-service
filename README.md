@@ -14,25 +14,25 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 
 
 
-# Structure
-├── data/ # Input CSV files
-├── gradle/ # Gradle wrapper files
+etl-kotlin-service/
+├── data/                        # Input CSV files
+├── gradle/                      # Gradle wrapper files
 ├── src/
-│ └── main/
-│ ├── kotlin/
-│ │ └── com/magno/etlservice/
-│ │ ├── controller/ # HTTP layer
-│ │ ├── model/ # Data classes (e.g., EtlJobRequest.kt)
-│ │ ├── scheduler/ # Scheduled jobs (if implemented)
-│ │ ├── service/ # Business logic for ETL
-│ │ └── EtlserviceApplication.kt # Entry point
-│ └── resources/
-│ ├── static/ # Static resources (optional)
-│ ├── templates/ # HTML templates (optional)
-│ └── application.properties # Environment configs
-├── test/ # Test cases
-├── build.gradle.kts # Build configuration
-├── settings.gradle.kts # Gradle settings
+│   └── main/
+│       ├── kotlin/
+│       │   └── com/magno/etlservice/
+│       │       ├── controller/          # HTTP layer
+│       │       ├── model/               # Data classes (e.g., EtlJobRequest.kt)
+│       │       ├── scheduler/           # Scheduled jobs (optional)
+│       │       ├── service/             # Business logic for ETL
+│       │       └── EtlserviceApplication.kt # Entry point
+│       └── resources/
+│           ├── static/                  # Static resources (optional)
+│           ├── templates/               # HTML templates (optional)
+│           └── application.properties   # Environment configs
+├── test/                        # Test cases
+├── build.gradle.kts             # Build configuration
+├── settings.gradle.kts          # Gradle settings
 ├── .gitignore
 ├── README.md
 
@@ -45,24 +45,19 @@ A backend service for performing basic ETL (Extract, Transform, Load) operations
 
 
 
+### Example Payload
 
-# SAMPLE PAYLOAD:
-
+```json
 {
-
   "source": {
     "type": "csv",
     "path": "./data/input.csv"
-  }
-,
-  "transformations": 
-[
+  },
+  "transformations": [
     { "type": "drop_nulls" },
     { "type": "rename_column", "from": "nome_antigo", "to": "cliente_nome" }
   ],
-
-  "destination": 
-{
+  "destination": {
     "type": "postgresql",
     "table": "clientes"
   }
