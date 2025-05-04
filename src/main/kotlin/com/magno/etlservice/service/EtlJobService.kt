@@ -23,7 +23,7 @@ class EtlJobService {  // Certifique-se de que o nome da classe seja exatamente 
 
         logger.info("Reading csv of: $sourcePath")
 
-        val conn = DriverManager.getConnection("jdbc:postgresql://ep-yellow-king-acs2logs-pooler.sa-east-1.aws.neon.tech:5432/neondb?sslmode=require", "neondb_owner", "npg_ByFMCONvo48p")
+        val conn = DriverManager.getConnection("YOUR-URL")
 
         val logSql = """
             CREATE TABLE IF NOT EXISTS public.etl_job_log (
