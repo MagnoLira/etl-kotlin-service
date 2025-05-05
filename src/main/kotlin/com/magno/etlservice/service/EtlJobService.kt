@@ -8,7 +8,7 @@ import java.io.FileReader
 import java.sql.DriverManager
 
 @Service
-class EtlJobService {  // Certifique-se de que o nome da classe seja exatamente esse
+class EtlJobService {  
     private val logger = LoggerFactory.getLogger(EtlJobService::class.java)
 
     fun runJob(request: EtlJobRequest) {
