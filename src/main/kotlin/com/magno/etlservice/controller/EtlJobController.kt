@@ -17,7 +17,7 @@ class EtlJobController(private val etlJobService: EtlJobService) {
     fun createEtlJob(@RequestBody request: EtlJobRequest): String {
         logger.info("Recebido novo job: $request")
         try {
-            etlJobService.runJob(request)  // Alterado para "runJob" com "J" maiúsculo
+            etlJobService.runJob(request)  
             return "Etl job executado com sucesso"
         } catch (e: Exception) {
             logger.error("Erro ao executar o ETL job", e)
@@ -32,7 +32,7 @@ class EtlHistoryController {
 
     @GetMapping("/history")
     fun getEtlHistory(): ResponseEntity<List<Map<String, Any>>> {
-        val conn = DriverManager.getConnection("jdbc:sqlite:data/etl.db")
+        val conn = DriverManager.getConnection("URL")
         val stmt = conn.createStatement()
         val rs = stmt.executeQuery("SELECT * FROM etl_job_log ORDER BY timestamp DESC")
 
